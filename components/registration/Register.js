@@ -75,8 +75,7 @@ const Register = () => {
             onValueChange={(itemValue) =>
               setSelectedLanguage(itemValue)
             }
-            
->
+            >
             <Picker.Item label="Java" value="java" />
             <Picker.Item label="JavaScript" value="js" />
           </Picker>
