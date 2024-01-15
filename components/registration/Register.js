@@ -8,7 +8,7 @@ const Register = () => {
     yes: false,
     No: false,
   };
-  const [selectedValue, setSelectedValue] = useState('java');
+  const [selectedValue, setSelectedValue] = useState("java");
   const [checked, setChecked] = useState(initialState);
 
   return (
@@ -42,16 +42,16 @@ const Register = () => {
           placeholder="Mobile Number"
           className="border-2 border-sky-700 p-2 mb-4"
         />
-         <View className="border-2 border-sky-700 text-black h-12 justify-center ">
-      <Picker
-        selectedValue={selectedValue}
-        onValueChange={(itemValue) => setSelectedValue(itemValue)}
-      >
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-        <Picker.Item label="Python" value="python" />
-        <Picker.Item label="C#" value="csharp" />
-      </Picker>
+        <View className="border-2 border-sky-700 text-black h-12 justify-center ">
+          <Picker
+            selectedValue={selectedValue}
+            onValueChange={(itemValue) => setSelectedValue(itemValue)}
+          >
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+            <Picker.Item label="Python" value="python" />
+            <Picker.Item label="C#" value="csharp" />
+          </Picker>
         </View>
         <Text className="text-md font-bold">GST Applicable:</Text>
         <View className="flex flex-row gap-4 justify-start mx-2 ">
@@ -78,11 +78,12 @@ const Register = () => {
           placeholder="GST Number"
           className="border-2 border-sky-700 p-2 mt-6 mb-4"
         />
-        
-       
       </View>
       <View className="mx-8 rou">
-        <TouchableOpacity onPress="function" className="border-2 border-black p-3 justify-center items-center my-2 bg-sky-700">
+        <TouchableOpacity
+          onPress="function"
+          className="border-2 border-black p-3 justify-center items-center my-2 bg-sky-700"
+        >
           <Text className="text-white font-bold">Submit</Text>
         </TouchableOpacity>
       </View>
