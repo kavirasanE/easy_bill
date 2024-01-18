@@ -42,7 +42,7 @@ const DrawerNav = () => {
        headerShown:false
       }}
     >
-      <Drawer.Screen name="Producist" component={StackNav} />
+      <Drawer.Screen name="ProducList" component={StackNav} />
       <Drawer.Screen name="Login" component={Login} />
     </Drawer.Navigator>
   );
