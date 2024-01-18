@@ -4,7 +4,7 @@ import { View ,Text} from 'react-native'
 const ProductList = () => {
   return (
    <View className="">
-    <Text>khdkdvbjnjdbkjsdv</Text>
+    <Text>this is Product List page</Text>
    </View>
   )
 }
