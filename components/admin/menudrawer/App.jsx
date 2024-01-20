@@ -11,7 +11,7 @@ import { Feather } from "@expo/vector-icons";
 import Login from "../../login/Login";
 import DrawerContent from "./DrawerContent";
 import CashierList from "../cashierList/CashierList";
-import { Image } from "react-native";
+import { View } from "react-native";
 import BulkUpdate from "../bulkupdate/BulkUpdate";
 import CancelReport from "../report/submenu/CancelReport";
 import CashierReport from "../report/submenu/CashierReport";
@@ -19,18 +19,21 @@ import BillWiseReport from "../report/submenu/BillWiseReport";
 import ItemizedReport from "../report/submenu/ItemizedReport";
 import Profile from "../profile/Profile";
 import LogOut from "../logout/LogOut";
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import CreateProduct from "../productList/CreateProduct";
+import Report from "../report/Report";
+import EditProduct from "../productList/EditProduct";
 const StackNav = () => {
   const Stack = createNativeStackNavigator();
   const navigation = useNavigation();
   return (
     <Stack.Navigator
       screenOptions={{
-        statusBarColor: "#0163d2",
+        statusBarColor: "#ffA500",
         headerStyle: {
-          backgroundColor: "#0163d2",
+          backgroundColor: "#FFFF",
         },
-        headerTintColor: "#fff",
+        headerTintColor: "#3498db",
         headerTitleAlign: "center",
       }}
     >
@@ -43,11 +46,19 @@ const StackNav = () => {
               <Feather
                 name="menu"
                 size={24}
-                color="white"
+                color="#3498db"
                 onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
               />
             );
           },
+          headerRight:() => {
+            return(
+              <View className="flex flex-row gap-5">
+              <MaterialCommunityIcons name="filter-variant" size={24} color="#3498db" onPress={() => navigation.navigate("Create Product")}/>
+              <MaterialCommunityIcons name="plus" size={24} color="#3498db" onPress={() => navigation.navigate("Create Product")}/>
+              </View>
+            );
+          }
         }}
       />
       <Stack.Screen name="Login" component={Login} />
@@ -59,6 +70,8 @@ const StackNav = () => {
       <Stack.Screen name="Itemized Report" component={ItemizedReport} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="LogOut"component={LogOut} />
+      <Stack.Screen name="Create Product"component={CreateProduct} Options={{headerShown:false}}/>
+      <Stack.Screen name="EditProduct"component={EditProduct} Options={{headerShown:false}}/>
       
     </Stack.Navigator>
   );

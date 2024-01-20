@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Text, View, Image, LayoutAnimation, UIManager } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { DrawerItem } from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -9,37 +8,77 @@ UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const DrawerList = [
-  { icon: "clipboard-list", label: "Product List", navigateTo: "Product List" },
-  { icon: "clipboard-list", label: "Login", navigateTo: "Login" },
-  { icon: "clipboard-list", label: "Cashier List", navigateTo: "Cashier List" },
-  { icon: "clipboard-list", label: "Bulk Update", navigateTo: "Bulk Update" },
+  { icon: "printer", label: "Product List", navigateTo: "Product List" },
+  { icon: "login", label: "Login", navigateTo: "Login" },
+  { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
+  { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
   {
-    icon: "plus",
+    icon: "notebook",
     label: "Report",
     submenu: [
-      { icon: "clipboard-list", label: "Cancel Report", navigateTo: "Cancel Report" },
-      { icon: "clipboard-list", label: "Cashier Report", navigateTo: "Cashier Report" },
-      { icon: "clipboard-list", label: "BillWise Report", navigateTo: "BillWise Report" },
-      { icon: "clipboard-list", label: "Itemized Report", navigateTo: "Itemized Report" },
+      {
+        icon: "close-circle",
+        label: "Cancel Report",
+        navigateTo: "Cancel Report",
+      },
+      {
+        icon: "bag-personal",
+        label: "Cashier Report",
+        navigateTo: "Cashier Report",
+      },
+      {
+        icon: "clipboard-list",
+        label: "BillWise Report",
+        navigateTo: "BillWise Report",
+      },
+      {
+        icon: "clipboard-list",
+        label: "Itemized Report",
+        navigateTo: "Itemized Report",
+      },
     ],
   },
-  { icon: "clipboard-list", label: "Profile", navigateTo: "Profile" },
-  { icon: "clipboard-list", label: "LogOut", navigateTo: "LogOut" },
+  { icon: "account-circle", label: "Profile", navigateTo: "Profile" },
+  { icon: "logout", label: "LogOut", navigateTo: "LogOut" },
 ];
 
-const DrawerLayout = ({ icon, label, navigateTo, onPress, showPlus, expanded }) => {
+const DrawerLayout = ({
+  icon,
+  label,
+  navigateTo,
+  onPress,
+  showPlus,
+  expanded,
+}) => {
+  const [state, setState] = useState(false);
+  const handleItemPress = () => {
+    setState(!state);
+  
+  };
+
   return (
-    <TouchableOpacity onPress={onPress}>
-      <DrawerItem
-        icon={({ color, size }) => <Icon name={icon} color={color} size={size} />}
-        label={label}
-      />
+    <TouchableOpacity onPress={ () => {onPress(); handleItemPress();}}>
+      <View className="flex flex-row justify-between items-center p-3">
+        <View className="flex flex-row items-center gap-5">
+          <Icon name={icon} color={"#077BC1"} size={24} />
+          <Text className="text-md">{label}</Text>
+        </View>
+        {showPlus && (
+            <View className="mx-5">
+              <Icon name={state ? "plus" : "minus"} color="#077BC1" size={24} />
+            </View>
+          
+        )}
+      </View>
       {expanded && (
-        <SubDrawerItems items={DrawerList.find((item) => item.label === "Report").submenu} />
+        <SubDrawerItems
+          items={DrawerList.find((item) => item.label === "Report").submenu}
+        />
       )}
     </TouchableOpacity>
   );
 };
+
 
 const SubDrawerItems = ({ items }) => {
   const navigation = useNavigation();
@@ -47,6 +86,7 @@ const SubDrawerItems = ({ items }) => {
   const handleItemPress = (item) => {
     if (item.navigateTo) {
       navigation.navigate(item.navigateTo);
+    
     }
   };
 
@@ -67,21 +107,29 @@ const DrawerContent = (props) => {
   const toggleSubmenu = () => {
     LayoutAnimation.easeInEaseOut();
     setShowSubmenu(!showSubmenu);
+  
   };
 
   return (
-    <View style={{ flex: 1 }}>
-      <View>
-        <Image source={require("./title.jpg")} style={{ width: 50, height: 50 }} />
+    <View className="mt-4">
+      <View className="px-5 justify-center items-center my-5">
+        <Image
+          source={require("./title.jpg")}
+          style={{ width: 150, height: 50 }}
+        />
       </View>
-      <View style={{ marginTop: 14 }}>
+      <View className="mt-5  font-bold">
         {DrawerList.map((item, index) => (
           <DrawerLayout
             key={index}
             icon={item.icon}
             label={item.label}
             navigateTo={item.navigateTo}
-            onPress={() => (item.submenu ? toggleSubmenu() : props.navigation.navigate(item.navigateTo))}
+            onPress={() =>
+              item.submenu
+                ? toggleSubmenu()
+                : props.navigation.navigate(item.navigateTo)
+            }
             showPlus={item.label === "Report" && !showSubmenu}
             expanded={item.label === "Report" && showSubmenu}
           />
