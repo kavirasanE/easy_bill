@@ -71,7 +71,7 @@ const StackNav = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="LogOut"component={LogOut} />
       <Stack.Screen name="Create Product"component={CreateProduct} Options={{headerShown:false}}/>
-      <Stack.Screen name="EditProduct"component={EditProduct} Options={{headerShown:false}}/>
+      <Stack.Screen name="Edit Product"component={EditProduct} Options={{headerShown:false}}/>
       
     </Stack.Navigator>
   );

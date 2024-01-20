@@ -104,7 +104,7 @@ const ProductList = () => {
             <TouchableOpacity
               className="mx-10 my-4"
               onPress={() =>
-                navigation.navigate("Create Product", { selectedItem })
+                navigation.navigate("Edit Product", { selectedItem })
               }
             >
               <Text className=" p-3 text-center rounded-2xl bg-sky-500 text-white">

@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
-import { useRoute } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 
 const CreateProduct = () => {
@@ -17,15 +16,8 @@ const CreateProduct = () => {
     No: false,
   };
   const [checked, setChecked] = useState(initialState);
-  const route = useRoute();
-  const { selectedItem } = route.params;
-  const [toEdit, setToEdit] = useState();
   const [selectedValue, setSelectedValue] = useState("Litres");
   const [showbox, setShowBox] = useState(false);
-  useEffect(() => {
-    console.log(selectedItem);
-    setToEdit(selectedItem);
-  }, []);
   const handleChange = (value) => {
     setChecked({ ...checked, No: value });
     setShowBox(!showbox);
@@ -48,7 +40,7 @@ const CreateProduct = () => {
           <TextInput
             placeholder=""
             className="border-2 border-gray-300 rounded-md p-2 "
-            value={toEdit?.name}
+            value={"name"}
           ></TextInput>
         </View>
         <View className="flex flex-row justify-between ">
@@ -88,7 +80,7 @@ const CreateProduct = () => {
           <TextInput
             placeholder=""
             className="border-2 border-gray-300 rounded-md p-2 "
-            value={toEdit?.price}
+            value={"price"}
           ></TextInput>
         </View>
         <Text className="mx-4" >GST</Text>
@@ -129,7 +121,7 @@ const CreateProduct = () => {
             }}
             multiline={true}
             numberOfLines={4}
-            value={toEdit?.description}
+            value={"description"}
           />
         </View>
         <TouchableOpacity className=" p-4 mx-4 top-4 items-center rounded-lg bg-sky-700 ">
