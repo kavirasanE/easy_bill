@@ -24,6 +24,7 @@ import CreateProduct from "../productList/CreateProduct";
 import Report from "../report/Report";
 import EditProduct from "../productList/EditProduct";
 import QuickBill from "../../Cashier/QuickBill";
+import CreateCashierList from "../cashierList/CreateCashierList";
 const StackNav = () => {
   const Stack = createNativeStackNavigator();
   const navigation = useNavigation();
@@ -37,6 +38,7 @@ const StackNav = () => {
         headerTintColor: "#3498db",
         headerTitleAlign: "center",
       }}
+     
     >
       <Stack.Screen
         name="Product List"
@@ -63,7 +65,13 @@ const StackNav = () => {
         }}
       />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Cashier List" component={CashierList} />
+      <Stack.Screen name="Cashier List" component={CashierList} options={{ headerRight: () => {
+        return(
+          <View>
+             <MaterialCommunityIcons name="plus" size={24} color="#3498db" onPress={() => navigation.navigate("Create Cashier")}/>
+          </View>
+        )
+      }}} />
       <Stack.Screen name="Bulk Update" component={BulkUpdate} />
       <Stack.Screen name="Cancel Report" component={CancelReport} />
       <Stack.Screen name="Cashier Report" component={CashierReport} />
@@ -74,6 +82,7 @@ const StackNav = () => {
       <Stack.Screen name="Create Product"component={CreateProduct} Options={{headerShown:false}}/>
       <Stack.Screen name="Edit Product"component={EditProduct} Options={{headerShown:false}}/>
       <Stack.Screen name="Quickbill"component={QuickBill}/>
+      <Stack.Screen name="Create Cashier" component={CreateCashierList}/>
       
     </Stack.Navigator>
   );
@@ -89,7 +98,6 @@ const DrawerNav = () => {
       }}
     >
       <Drawer.Screen name="Product List" component={StackNav} />
-      
     </Drawer.Navigator>
   );
 };

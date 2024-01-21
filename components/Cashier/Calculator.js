@@ -31,19 +31,19 @@ const Calculator = () => {
   return (
     <SafeAreaView>
       <View>
-        <View className=" top-56">
+        <View className="top-56">
           <View className="bg-gray-700 ">
-            <Text>lkdvmdsvmmks</Text>
+            <Text></Text>
           </View>
-          <View className="bg-white flex flex-row justify-between items-center p-3 border">
+          <View className="bg-white flex flex-row justify-between items-center p-3 ">
             <Text>{displayValue}</Text>
             <AntDesign name="close" size={24} color="black" />
           </View>
           <View className="flex flex-row gap-20 p-4 ">
-            <Text className="border w-1/4 p-2 text-center rounded-lg font-semibold">
+            <Text className=" w-1/4 p-2 text-center rounded-lg font-bold ">
               Key
             </Text>
-            <Text className="border w-1/4 p-2 text-center rounded-lg font-semibold ">
+            <Text className=" w-1/4 p-2 text-center rounded-lg font-bold ">
               Qty
             </Text>
           </View>

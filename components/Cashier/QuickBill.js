@@ -13,7 +13,7 @@ const QuickBill = () => {
   return (
     <SafeAreaView>
       <View>
-        <View className="p-4 justify-center items-center top-14">
+        <View className="p-4 justify-center items-center top-1">
           <Text> QuickBill</Text>
         </View>
         <Calculator/>
