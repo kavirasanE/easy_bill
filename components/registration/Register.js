@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity ,KeyboardAvoidingView} from "react-native";
 import Checkbox from "expo-checkbox";
 import { Picker } from "@react-native-picker/picker";
+import { RadioButton } from "react-native-paper";
+
 
 const Register = () => {
-  const initialState = {
-    yes: false,
-    No: false,
-  };
   const [selectedValue, setSelectedValue] = useState("java");
-  const [checked, setChecked] = useState(initialState);
+  const [checked, setChecked] = useState("option1");
 
   return (
     <View className="m-4 mt-10">
@@ -56,20 +54,22 @@ const Register = () => {
         <Text className="text-md font-bold">GST Applicable:</Text>
         <View className="flex flex-row gap-4 justify-start mx-2 ">
           <View className="flex flex-row gap-2">
-            <Checkbox
+            <RadioButton
               className="rounded-full"
-              value={checked.yes}
-              onValueChange={(value) => setChecked({ ...checked, yes: value })}
-              color={checked ? "#0000FF" : undefined}
+              value='option1'
+              status={checked === 'option1' ? 'checked' :'unchecked'}
+              onPress={()=>setChecked('option1')}
+              color= "#0000FF" 
             />
             <Text>Yes</Text>
           </View>
           <View className="flex flex-row gap-2">
-            <Checkbox
+            <RadioButton
               className="rounded-full"
-              value={checked.No}
-              onValueChange={(value) => setChecked({ ...checked, No: value })}
-              color={checked ? "#0000FF" : undefined}
+              value='option2'
+              status={checked === 'option2' ? 'checked' :'unchecked'}
+              onPress={() =>setChecked('option2')}
+              color="#0000FF"
             />
             <Text>No</Text>
           </View>

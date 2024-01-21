@@ -5,23 +5,27 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  FlatList,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
 import Checkbox from "expo-checkbox";
+import { RadioButton } from "react-native-paper";
 
 const CreateProduct = () => {
-  const initialState = {
-    yes: false,
-    No: false,
-  };
-  const [checked, setChecked] = useState(initialState);
+
+  const [checked, setChecked] = useState('option1');
   const [selectedValue, setSelectedValue] = useState("Litres");
-  const [showbox, setShowBox] = useState(false);
-  const handleChange = (value) => {
-    setChecked({ ...checked, No: value });
-    setShowBox(!showbox);
-  };
+  const [showbox,setShowBox] = useState(false);
+  const handleChangeoption1 = () => {
+     setShowBox(false)
+     setChecked('option1')
+  }
+  const handleChangeoption2 =() => {
+    setShowBox(!showbox)
+    setChecked('option2')
+  }
   //  const initialProduct =useMemo (() => productListItems[0] || {}, [productListItems]);
   //  useMemo(() => {
   //   if(initialProduct){
@@ -33,14 +37,14 @@ const CreateProduct = () => {
   //   }
   //  },[initialProduct]);
   return (
-    <SafeAreaView className="flex-1">
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} className="flex-1">
       <View className="m-2">
         <View className="mx-2 my-4">
           <Text className="font-medium text-md  mb-2"> Product Name:</Text>
           <TextInput
             placeholder=""
             className="border-2 border-gray-300 rounded-md p-2 "
-            value={"name"}
+            value={""}
           ></TextInput>
         </View>
         <View className="flex flex-row justify-between ">
@@ -87,27 +91,27 @@ const CreateProduct = () => {
         <View className="justify-center items-center my-2">
           
           <View className="flex flex-row gap-2">
-            <Checkbox
+            <RadioButton
               className="rounded-full"
-              value={checked.yes}
-              onValueChange={(value) => setChecked({ ...checked, yes: value })}
-              color={checked ? "#298309" : undefined}
+              value='option1'
+              status={checked === 'option1' ? 'checked' :'unchecked'}
+              onPress={() =>handleChangeoption1()}
+              color="#298309" 
             />
             <Text>Inclusive</Text>
-            <Checkbox
+            <RadioButton
               className="rounded-full"
-              value={checked.No}
-              onValueChange={(value) => handleChange(value)}
-              color={checked ? "#298309" : undefined}
+              value="option2"
+              status={checked === 'option2' ? 'checked':'unchecked'}
+              onPress={() => handleChangeoption2()}
+              color= "#298309"
             />
             <Text>Exclusive</Text>
            
           </View>
-          {showbox ? (
-              <View className="border-2 p-3 w-80 rounded-md border-gray-300 my-2 transition-transform ease-in-out duration-500">
+           {showbox ?(  <View className="border-2 p-3 w-80 rounded-md border-gray-300 my-2 transition-transform ease-in-out duration-500">
                 <TextInput placeholder="Enter the GST %"/>
-              </View>
-            ) : null}
+              </View>): null}
         </View>
 
         <View className="mx-2">
@@ -121,14 +125,14 @@ const CreateProduct = () => {
             }}
             multiline={true}
             numberOfLines={4}
-            value={"description"}
+            value=""
           />
         </View>
         <TouchableOpacity className=" p-4 mx-4 top-4 items-center rounded-lg bg-sky-700 ">
           <Text className="text-white font-bold">Create</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 

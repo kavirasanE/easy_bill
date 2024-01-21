@@ -23,6 +23,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import CreateProduct from "../productList/CreateProduct";
 import Report from "../report/Report";
 import EditProduct from "../productList/EditProduct";
+import QuickBill from "../../Cashier/QuickBill";
 const StackNav = () => {
   const Stack = createNativeStackNavigator();
   const navigation = useNavigation();
@@ -72,6 +73,7 @@ const StackNav = () => {
       <Stack.Screen name="LogOut"component={LogOut} />
       <Stack.Screen name="Create Product"component={CreateProduct} Options={{headerShown:false}}/>
       <Stack.Screen name="Edit Product"component={EditProduct} Options={{headerShown:false}}/>
+      <Stack.Screen name="Quickbill"component={QuickBill}/>
       
     </Stack.Navigator>
   );
@@ -86,7 +88,7 @@ const DrawerNav = () => {
         headerShown: false,
       }}
     >
-      <Drawer.Screen name="ProducList" component={StackNav} />
+      <Drawer.Screen name="Product List" component={StackNav} />
       
     </Drawer.Navigator>
   );

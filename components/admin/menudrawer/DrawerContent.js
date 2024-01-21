@@ -65,7 +65,7 @@ const DrawerLayout = ({
         </View>
         {showPlus && (
             <View className="mx-5">
-              <Icon name={state ? "plus" : "minus"} color="#077BC1" size={24} />
+              <Icon name={state ? "minus" : "plus"} color="#077BC1" size={24} />
             </View>
           
         )}
