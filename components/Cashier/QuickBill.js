@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const QuickBill = () => {
   return (
@@ -26,7 +27,6 @@ const QuickBill = () => {
           </View>
           <View className="flex flex-row gap-20 p-4 ">
             <Text className="border w-1/4 p-2 text-center rounded-lg font-semibold">
-              {" "}
               Key
             </Text>
             <Text className="border w-1/4 p-2 text-center rounded-lg font-semibold ">
@@ -35,7 +35,7 @@ const QuickBill = () => {
           </View>
           <View className="flex flex-row">
             <View className="flex flex-col w-5/6 ">
-              <View className="flex flex-row justify-around items-center  mx-2 p-3 ">
+              <View className="flex flex-row justify-around items-center  mx-2 my-1 p-3 ">
                 <TouchableOpacity className="flex-3">
                   <Text className="font-bold text-lg">7</Text>
                 </TouchableOpacity>
@@ -46,7 +46,7 @@ const QuickBill = () => {
                   <Text className="font-bold text-lg">9</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row justify-around items-center mx-2 p-3">
+              <View className="flex flex-row justify-around items-center mx-2 my-1 p-3">
                 <TouchableOpacity className="flex-3">
                   <Text className="font-bold text-lg">4</Text>
                 </TouchableOpacity>
@@ -57,7 +57,7 @@ const QuickBill = () => {
                   <Text className="font-bold text-lg">6</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row justify-around items-center  mx-2 p-3 ">
+              <View className="flex flex-row justify-around items-center  mx-2 my-1 p-3 ">
                 <TouchableOpacity className="flex-3">
                   <Text className="font-bold text-lg">1</Text>
                 </TouchableOpacity>
@@ -68,7 +68,7 @@ const QuickBill = () => {
                   <Text className="font-bold text-lg">3</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row justify-around items-center  mx-2 p-3">
+              <View className="flex flex-row justify-around items-center  mx-2 my-1 p-3">
                 <TouchableOpacity className="flex-3">
                   <Text className="font-bold text-lg">0</Text>
                 </TouchableOpacity>
@@ -79,7 +79,7 @@ const QuickBill = () => {
                   <Text className="font-bold text-lg">.</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row justify-around items-center  mx-2 p-3 ">
+              <View className="flex flex-row justify-around items-center  mx-2 mt-1 p-3 ">
                 <TouchableOpacity className="flex-3">
                   <Text className="font-bold text-lg">.250</Text>
                 </TouchableOpacity>
@@ -108,6 +108,25 @@ const QuickBill = () => {
                 </Text>
               </TouchableOpacity>
             </View>
+          </View>
+          <View className="flex flex-row justify-between gap-4 items-center mx-3 ">
+            <TouchableOpacity className="p-2  rounded-lg bg-blue-500 w-1/5 items-center flex-1 ">
+              <MaterialCommunityIcons
+                name="clipboard-list"
+                size={30}
+                color="white"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity className="p-2 rounded-lg bg-blue-500 flex-none w-1/5 items-center">
+              <MaterialCommunityIcons
+                name="printer-settings"
+                size={30}
+                color="white"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity className="p-3 rounded-lg bg-blue-500 flex-auto  items-center ">
+              <Text className="text-center text-white font-bold "> Total Price</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
