@@ -12,6 +12,7 @@ const DrawerList = [
   { icon: "login", label: "Login", navigateTo: "Login" },
   { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
   { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
+  { icon: "printer-wireless", label: "Printer Setting", navigateTo: "Printer Setting" },
   {
     icon: "notebook",
     label: "Report",
@@ -40,6 +41,7 @@ const DrawerList = [
   },
   { icon: "account-circle", label: "Profile", navigateTo: "Profile" },
   { icon: "logout", label: "LogOut", navigateTo: "LogOut" },
+ 
 ];
 
 const DrawerLayout = ({

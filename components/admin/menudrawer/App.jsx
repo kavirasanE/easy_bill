@@ -25,6 +25,7 @@ import Report from "../report/Report";
 import EditProduct from "../productList/EditProduct";
 import QuickBill from "../../Cashier/QuickBill";
 import CreateCashierList from "../cashierList/CreateCashierList";
+import PrinterSetting from "../../printer/PrinterSetting";
 const StackNav = () => {
   const Stack = createNativeStackNavigator();
   const navigation = useNavigation();
@@ -83,6 +84,7 @@ const StackNav = () => {
       <Stack.Screen name="Edit Product"component={EditProduct} Options={{headerShown:false}}/>
       <Stack.Screen name="Quickbill"component={QuickBill}/>
       <Stack.Screen name="Create Cashier" component={CreateCashierList}/>
+      <Stack.Screen name="Printer Setting" component={PrinterSetting}/>
       
     </Stack.Navigator>
   );
@@ -98,6 +100,7 @@ const DrawerNav = () => {
       }}
     >
       <Drawer.Screen name="Product List" component={StackNav} />
+      
     </Drawer.Navigator>
   );
 };
