@@ -26,6 +26,10 @@ import EditProduct from "../productList/EditProduct";
 import QuickBill from "../../Cashier/QuickBill";
 import CreateCashierList from "../cashierList/CreateCashierList";
 import PrinterSetting from "../../printer/PrinterSetting";
+import CashierLogin from "./CashierLogin";
+import Register from "../../registration/Register";
+import SubscriptionPending from "../../supscription/SubscriptionPending";
+import DrawerCashier from "./DrawerCashier";
 const StackNav = () => {
   const Stack = createNativeStackNavigator();
   const navigation = useNavigation();
@@ -65,7 +69,7 @@ const StackNav = () => {
           }
         }}
       />
-      <Stack.Screen name="Login" component={Login} />
+       
       <Stack.Screen name="Cashier List" component={CashierList} options={{ headerRight: () => {
         return(
           <View>
@@ -73,18 +77,21 @@ const StackNav = () => {
           </View>
         )
       }}} />
+       <Stack.Screen name="Quickbill"component={QuickBill}/>
       <Stack.Screen name="Bulk Update" component={BulkUpdate} />
       <Stack.Screen name="Cancel Report" component={CancelReport} />
       <Stack.Screen name="Cashier Report" component={CashierReport} />
       <Stack.Screen name="BillWise Report" component={BillWiseReport} />
       <Stack.Screen name="Itemized Report" component={ItemizedReport} />
+     
       <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="LogOut"component={LogOut} />
+      <Stack.Screen name="LogOut"component={Login} />
       <Stack.Screen name="Create Product"component={CreateProduct} Options={{headerShown:false}}/>
       <Stack.Screen name="Edit Product"component={EditProduct} Options={{headerShown:false}}/>
-      <Stack.Screen name="Quickbill"component={QuickBill}/>
       <Stack.Screen name="Create Cashier" component={CreateCashierList}/>
       <Stack.Screen name="Printer Setting" component={PrinterSetting}/>
+      
+      
       
     </Stack.Navigator>
   );
@@ -104,10 +111,37 @@ const DrawerNav = () => {
     </Drawer.Navigator>
   );
 };
+
+const DrawerNavCashier =() => {
+  const Drawer = createDrawerNavigator();
+  return (
+    <Drawer.Navigator
+      drawerContent={(props) => <DrawerCashier {...props} />}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Drawer.Screen name="Quickbill" component={StackNav}  />
+      
+    </Drawer.Navigator>
+  );
+}
 const App = () => {
+  const Stack =createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <DrawerNav />
+      <Stack.Navigator  
+      initialRouteName="Register"
+      screenOptions={{headerShown:false}}>
+        
+        <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="Subscription" component={SubscriptionPending}/>
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Product List" component={DrawerNav}/>
+        <Stack.Screen name="Quickbill" component={DrawerNavCashier}/>
+        
+      </Stack.Navigator>
+     
     </NavigationContainer>
   );
 };

@@ -11,6 +11,7 @@ import {  View } from 'react-native';
 //import Login from './components/login/Login';
 //import UpdateDefaultCredentials from './components/login/UpdateDefaultCredentials';
 import Menu from './components/admin/menudrawer/App';
+//import Login from './components/login/Login';
 //import Demo from './components/Demo';
 //import CreateProduct from './components/admin/productList/CreateProduct';
 //import Register from './components/registration/Register';

@@ -1,8 +1,7 @@
 import React, { useState} from "react";
-import { Text, View, Image, LayoutAnimation, UIManager } from "react-native";
+import { Text, View, Image, LayoutAnimation, UIManager ,TouchableOpacity} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -10,8 +9,9 @@ UIManager.setLayoutAnimationEnabledExperimental &&
 const DrawerList = [
     { icon: "printer", label: "Product List", navigateTo: "Product List" },
   // { icon: "login", label: "Login", navigateTo: "Login" },
-  { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
-  { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
+//   { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
+//   { icon: "account-group", label: "Create Cashier", navigateTo: "Create Cashier" },
+//   { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
   { icon: "printer-wireless", label: "Printer Setting", navigateTo: "Printer Setting" },
   { icon: "printer-wireless", label: "Quickbill", navigateTo: "Quickbill" },
 
@@ -42,7 +42,7 @@ const DrawerList = [
     ],
   },
   { icon: "account-circle", label: "Profile", navigateTo: "Profile" },
-  { icon: "logout", label: "LogOut", navigateTo: "Login" },
+  { icon: "logout", label: "LogOut", navigateTo: "LogOut" },
  
 ];
 
@@ -105,7 +105,7 @@ const SubDrawerItems = ({ items }) => {
   ));
 };
 
-const DrawerContent = (props) => {
+const DrawerCashier = (props) => {
   const [showSubmenu, setShowSubmenu] = useState(false);
 
   const toggleSubmenu = () => {
@@ -143,4 +143,4 @@ const DrawerContent = (props) => {
   );
 };
 
-export default DrawerContent;
+export default DrawerCashier;

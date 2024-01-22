@@ -3,11 +3,13 @@ import { View, Text, TextInput, TouchableOpacity ,KeyboardAvoidingView} from "re
 import Checkbox from "expo-checkbox";
 import { Picker } from "@react-native-picker/picker";
 import { RadioButton } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 
 const Register = () => {
   const [selectedValue, setSelectedValue] = useState("java");
   const [checked, setChecked] = useState("option1");
+  const navigation =useNavigation();
 
   return (
     <View className="m-4 mt-10">
@@ -81,8 +83,9 @@ const Register = () => {
       </View>
       <View className="mx-8 rou">
         <TouchableOpacity
-          onPress="function"
           className="border-2 border-black p-3 justify-center items-center my-2 bg-sky-700"
+          onPress={() => navigation.navigate('Subscription')}
+         
         >
           <Text className="text-white font-bold">Submit</Text>
         </TouchableOpacity>
