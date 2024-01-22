@@ -13,6 +13,8 @@ const DrawerList = [
   { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
   { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
   { icon: "printer-wireless", label: "Printer Setting", navigateTo: "Printer Setting" },
+  { icon: "printer-wireless", label: "Quickbill", navigateTo: "Quickbill" },
+
   {
     icon: "notebook",
     label: "Report",

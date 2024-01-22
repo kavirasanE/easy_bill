@@ -31,7 +31,7 @@ const Calculator = () => {
   return (
     <SafeAreaView>
       <View>
-        <View className="top-56">
+        <View className="top-32">
           <View className="bg-gray-700 ">
             <Text></Text>
           </View>

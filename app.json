@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "easy_bill",
-    "slug": "easy_bill",
+    "slug": "easybill",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kavirasan.easybill"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "169449b9-8551-4538-8d22-2797a6a02f25"
+      }
+    },
+    "owner": "kavirasan"
   }
 }
