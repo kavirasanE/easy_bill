@@ -97,6 +97,7 @@ const StackNav = () => {
   );
 };
 
+
 const DrawerNav = () => {
   const Drawer = createDrawerNavigator();
   return (
@@ -121,7 +122,7 @@ const DrawerNavCashier =() => {
         headerShown: false,
       }}
     >
-      <Drawer.Screen name="Quickbill" component={StackNav}  />
+      <Drawer.Screen name="Product List" component={StackNav}  />
       
     </Drawer.Navigator>
   );
@@ -138,7 +139,7 @@ const App = () => {
         <Stack.Screen name="Subscription" component={SubscriptionPending}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Product List" component={DrawerNav}/>
-        <Stack.Screen name="Quickbill" component={DrawerNavCashier}/>
+        <Stack.Screen name="Cashier List" component={DrawerNavCashier}/>
         
       </Stack.Navigator>
      
