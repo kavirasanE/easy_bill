@@ -54,7 +54,7 @@ const ProductList = () => {
   };
   return (
     <SafeAreaView>
-      <View className="relative">
+    
         <View className=" font-semibold flex flex-row  justify-between  bg-sky-700 p-3">
           <Text className="text-white font-semibold w-8  ">S.No</Text>
           <Text className="text-white font-semibold w-24 text-center ">
@@ -88,7 +88,7 @@ const ProductList = () => {
             keyExtractor={(item) => item.id.toString()}
           />
         </View>
-        <View className="top-3/4">
+        {/* <View className=" top-1/2">
           <TouchableOpacity
             className="  w-14 h-14 rounded-lg bg-sky-700 absolute right-0 m-4 "
             onPress={() => setFilter(!filter)}
@@ -102,7 +102,7 @@ const ProductList = () => {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      
       <Modal
         onRequestClose={() => {
           setFilter(!filter);
@@ -161,7 +161,7 @@ const ProductList = () => {
            </View>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
       <Modal
         onRequestClose={() => {
           setPopup(!popup);

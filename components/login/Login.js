@@ -17,7 +17,7 @@ const Login = () => {
           navigation.navigate('Product List');
         } else if (username === 'user' && password === 'user') {
           // Navigate to QuickBill for user
-          navigation.navigate('Cashier List');
+          navigation.navigate('Reports');
         } else {
           // Handle incorrect credentials
           alert('Invalid username or password');

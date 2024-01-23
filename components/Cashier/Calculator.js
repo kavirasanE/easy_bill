@@ -27,19 +27,16 @@ const Calculator = () => {
     setDisplayValue("0");
     setOperator(null);
   };
-
+  
   return (
     <SafeAreaView>
       <View>
-        <View className="top-32">
-          <View className="bg-gray-700 ">
-            <Text></Text>
-          </View>
+        <View className="top-40">
           <View className="bg-white flex flex-row justify-between items-center p-3 ">
             <Text>{displayValue}</Text>
-            <AntDesign name="close" size={24} color="black" />
+            <AntDesign name="close" size={24} color="black"  />
           </View>
-          <View className="flex flex-row gap-20 p-4 ">
+          <View className="flex flex-row gap-20  ">
             <Text className=" w-1/4 p-2 text-center rounded-lg font-bold ">
               Key
             </Text>
@@ -49,7 +46,7 @@ const Calculator = () => {
           </View>
           <View className="flex flex-row">
             <View className="flex flex-col w-5/6 ">
-              <View className="flex flex-row   items-center  mx-2 my-1 p-3 ">
+              <View className="flex flex-row   items-center  mx-2  p-3 ">
                 <TouchableOpacity
                   className="flex-3"
                   onPress={() => {
@@ -75,7 +72,7 @@ const Calculator = () => {
                   <Text className="font-bold text-lg mx-10">9</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row  items-center mx-2 my-1 p-3">
+              <View className="flex flex-row  items-center mx-2  p-3">
                 <TouchableOpacity
                   className="flex-3"
                   onPress={() => {
@@ -101,7 +98,7 @@ const Calculator = () => {
                   <Text className="font-bold  mx-10 text-lg">6</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row  items-center  mx-2 my-1 p-3 ">
+              <View className="flex flex-row  items-center  mx-2  p-3 ">
                 <TouchableOpacity
                   className="flex-3"
                   onPress={() => {
@@ -127,7 +124,7 @@ const Calculator = () => {
                   <Text className="font-bold  mx-10 text-lg">3</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row  items-center  mx-2 my-1 p-3">
+              <View className="flex flex-row  items-center  mx-2  p-3">
                 <TouchableOpacity
                   className="flex-3"
                   onPress={() => {
@@ -153,7 +150,7 @@ const Calculator = () => {
                   <Text className="font-bold  mx-10 text-lg">.</Text>
                 </TouchableOpacity>
               </View>
-              <View className="flex flex-row items-center  mx-2 mt-1 p-3 ">
+              <View className="flex flex-row items-center  mx-2  p-3 ">
                 <TouchableOpacity
                   className="flex-3"
                   onPress={() => {
@@ -204,7 +201,7 @@ const Calculator = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View className="flex flex-row justify-between gap-4 items-center mx-3 ">
+          <View className="flex flex-row justify-between gap-4 items-center mx-3 mt-1">
             <TouchableOpacity className="p-2  rounded-lg bg-blue-500 w-1/5 items-center flex-1 ">
               <MaterialCommunityIcons
                 name="clipboard-list"

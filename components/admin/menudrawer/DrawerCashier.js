@@ -7,12 +7,12 @@ UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
 const DrawerList = [
-    { icon: "printer", label: "Product List", navigateTo: "Product List" },
+    { icon: "printer", label: "Product List", navigateTo: "ProductList" },
   // { icon: "login", label: "Login", navigateTo: "Login" },
-      { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
+      // { icon: "account-group", label: "Cashier List", navigateTo: "Cashier List" },
 //   { icon: "account-group", label: "Create Cashier", navigateTo: "Create Cashier" },
 //   { icon: "database-cog", label: "Bulk Update", navigateTo: "Bulk Update" },
-  { icon: "printer-wireless", label: "Printer Setting", navigateTo: "Printer Setting" },
+  
   { icon: "printer-wireless", label: "Quickbill", navigateTo: "Quickbill" },
 
   {
@@ -41,6 +41,7 @@ const DrawerList = [
       },
     ],
   },
+  { icon: "printer-wireless", label: "Printer Setting", navigateTo: "Printer Setting" },
   { icon: "account-circle", label: "Profile", navigateTo: "Profile" },
   { icon: "logout", label: "LogOut", navigateTo: "Login" },
  
