@@ -42,7 +42,7 @@ const DrawerList = [
     ],
   },
   { icon: "account-circle", label: "Profile", navigateTo: "Profile" },
-  { icon: "logout", label: "LogOut", navigateTo: "LogOut" },
+  { icon: "logout", label: "LogOut", navigateTo: "Login" },
  
 ];
 
