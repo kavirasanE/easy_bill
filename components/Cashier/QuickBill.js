@@ -85,7 +85,7 @@ const QuickBill = () => {
        
       </View>
       <View className="top-1/2 absolute">
-      <Calculator/>
+      <Calculator />
       </View>
       
     </SafeAreaView>

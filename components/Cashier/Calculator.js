@@ -188,7 +188,7 @@ const Calculator = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 className=" rounded-lg px-1 py-6 bg-blue-500 "
-                onPress={() => handleOperatorInput("x")}
+                onPress={() => handleNumberInput("x")}
               >
                 <Text className="text-center font-bold text-md text-white ">
                   X Qty.
